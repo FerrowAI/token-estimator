@@ -1,4 +1,5 @@
 # token-estimator
+![CI](https://github.com/FerrowAI/token-estimator/actions/workflows/ci.yml/badge.svg)
 
 Heuristic token count **estimation** for LLM prompts — no tokenizer
 dependency, zero runtime deps, strict TypeScript.
