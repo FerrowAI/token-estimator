@@ -1,0 +1,29 @@
+# token-estimator
+
+> Heuristic token count estimation for LLM prompts, with no tokenizer dependency.
+
+token-estimator gives you a fast, dependency-free approximation of how many
+tokens a string or chat message array will consume, without loading a real
+tokenizer (tiktoken, SentencePiece, etc). It blends a chars/4 baseline with
+word-boundary, whitespace-run, CJK-density, and code-density signals, then
+applies a per-model-family calibration factor. Estimates are stated with an
+explicit +/-15% error margin. This is for quick budget checks (fitting a
+prompt into a context window, deciding whether to summarize) — not for
+billing-critical accuracy. Zero runtime dependencies, strict TypeScript.
+
+## API
+
+- `estimateTokens(text: string, options?: EstimateOptions): TokenEstimate`
+- `estimateMessages(messages: ChatMessage[], options?: EstimateOptions): TokenEstimate`
+- `fitsWithin(messages: ChatMessage[], limit: number, reserve?: number, options?: EstimateOptions): FitsWithinResult`
+- `ERROR_MARGIN: number` (0.15)
+- `MESSAGE_OVERHEAD_TOKENS: number` (4)
+- Types: `ModelFamily`, `EstimateOptions`, `TokenEstimate`, `ChatMessage`, `FitsWithinResult`
+
+## Install
+
+```
+npm install token-estimator
+```
+
+Part of the Ferrow open-source toolkit: https://github.com/Ruzylo-cloud/ferrow-toolkit — sponsored by https://ferrow.ai
