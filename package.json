@@ -1,10 +1,12 @@
 {
-  "name": "token-estimator",
+  "name": "@ferrow/token-estimator",
   "version": "1.0.0",
   "description": "Heuristic LLM prompt token count estimation with no tokenizer dependency — char/word/CJK/code aware, per-model calibration, message-array overhead, budget helpers.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "demo": "npm run build && node examples/demo.js"
@@ -21,7 +23,9 @@
   ],
   "author": "Ruzylo-cloud",
   "license": "MIT",
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ruzylo-cloud/token-estimator.git"

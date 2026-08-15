@@ -1,4 +1,8 @@
 # token-estimator
+
+```sh
+npm install @ferrow/token-estimator
+```
 ![CI](https://github.com/FerrowAI/token-estimator/actions/workflows/ci.yml/badge.svg)
 
 Heuristic token count **estimation** for LLM prompts — no tokenizer
